@@ -29,7 +29,22 @@ export default new Router({
     {
       path: '/users',
       name: 'users',
-      component: () => import(/* webpackChunkName: "news" */ './views/Users.vue')
+      component: () => import(/* webpackChunkName: "users" */ './views/Users.vue')
+    },
+    {
+      path: '/helpme',
+      name: 'helpme',
+      component: () => import(/* webpackChunkName: "helpme" */ './views/HelpMe.vue')
+    },
+    {
+      path: '/places',
+      name: 'places',
+      component: () => import(/* webpackChunkName: "places" */ './views/Places.vue')
+    },
+    {
+      path: '/survey',
+      name: 'survey',
+      component: () => import(/* webpackChunkName: "survey" */ './views/Survey.vue')
     },
   ]
 })

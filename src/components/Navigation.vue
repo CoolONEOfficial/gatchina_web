@@ -23,8 +23,9 @@
                 {title: 'Новости', icon: 'list', path: '/news'},
                 {title: 'Пользователи', icon: 'people', path: '/users'},
                 {title: 'Инициативы', icon: 'message', path: '/initiatives'},
-                {title: 'Обратная связь', icon: 'question_answer', path: '/about'},
-                {title: 'Руки помощи', icon: 'fas fa-hands-helping', path: '/hands'}
+                {title: 'Руки помощи', icon: 'fas fa-hands-helping', path: '/helpme'},
+                {title: 'Места', icon: 'fas fa-map-marker-alt', path: '/places'},
+                {title: 'Опросы', icon: 'fas fa-poll', path: '/survey'},
             ],
         })
     }

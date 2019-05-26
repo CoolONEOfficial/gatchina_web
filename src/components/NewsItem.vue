@@ -4,15 +4,15 @@
                 height="200px"
                 :src="imageUrl != null ? imageUrl : ''"
         >
-            <v-container fill-height fluid>
-                <v-layout fill-height>
-                    <v-flex class="text-xs-left" flexbox style="background: #ffffff55">
+            <v-container style="padding: 0">
+                <v-layout style="background: #ffffff55" class="align-center px-3 pt-1">
+                    <v-flex class="text-xs-left" flexbox>
                         <a :href="url">Источник</a>
                     </v-flex>
-                    <v-flex align-center flexbox style="background: #ffffff55">
+                    <v-flex align-center flexbox>
                         <span class="headline">{{ title }}</span>
                     </v-flex>
-                    <v-flex class="text-xs-right" flexbox style="background: #ffffff55">
+                    <v-flex class="text-xs-right" flexbox>
                         <span>{{ date | moment("DD-MM-YYYY, h:mm") }}</span>
                     </v-flex>
                 </v-layout>

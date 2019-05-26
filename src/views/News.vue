@@ -20,7 +20,7 @@
             let context = this;
             axios
                 .get('https://cors.io/?http://138.68.108.198:8081/news/all' +
-                    '?direction=ASC' +
+                    '?direction=DESC' +
                     '&orderBy=date' +
                     '&page=0' +
                     '&size=20')

@@ -5,7 +5,7 @@
                 <v-btn color="primary" dark v-on="on"
                        @click="dialog = true"
                        style="position: fixed; z-index: 99; right: 10px;">
-                    Создать новость
+                    Создать опрос
                 </v-btn>
             </template>
             <v-card>
@@ -13,14 +13,14 @@
                     <v-btn icon dark @click="dialog = false">
                         <v-icon>close</v-icon>
                     </v-btn>
-                    <v-toolbar-title>Создание новости</v-toolbar-title>
+                    <v-toolbar-title>Создание опроса</v-toolbar-title>
                     <v-spacer></v-spacer>
                     <v-toolbar-items>
                         <v-btn dark flat @click="send">Отправить</v-btn>
                     </v-toolbar-items>
                 </v-toolbar>
                 <v-layout row wrap>
-                    <v-flex md12 lg4>
+                    <v-flex md12 lg6>
                         <v-text-field
                                 label="Название"
                                 prepend-icon="title"
@@ -28,7 +28,7 @@
                                 class="pa-3 pt-4"
                         ></v-text-field>
                     </v-flex>
-                    <v-flex md12 lg4>
+                    <v-flex md12 lg6>
                         <v-menu
                                 v-model="datePicker"
                                 :close-on-content-click="false"
@@ -52,30 +52,34 @@
                             <v-date-picker v-model="date" @input="datePicker = false"></v-date-picker>
                         </v-menu>
                     </v-flex>
-                    <v-flex md12 lg4>
-                        <v-flex xs12 class="text-xs-center text-sm-center text-md-center text-lg-center">
-                            <img :src="imageUrl" height="150" v-if="imageUrl"/>
-                            <v-text-field class="pa-3 pt-4" label="Select Image" @click='pickFile' v-model='imageName'
-                                          prepend-icon='attach_file'></v-text-field>
-                            <input
-                                    type="file"
-                                    style="display: none"
-                                    ref="image"
-                                    accept="image/*"
-                                    @change="onFilePicked"
-                            >
-                        </v-flex>
-                    </v-flex>
                 </v-layout>
                 <v-layout row wrap>
-                    <v-flex xs12 sm12 md12 lg8>
-                        <vue-editor v-model="content"></vue-editor>
+                    <v-flex xs12 sm12 md12 lg8 class="px-3">
+                        <v-text-field v-model="description"
+                                      label="Описание"
+                                      multi-line
+                        ></v-text-field>
                     </v-flex>
                     <v-flex xs12 sm12 md12 lg4>
                         <location-picker
                                 v-model="location">
                         </location-picker>
                     </v-flex>
+                </v-layout>
+                <v-layout column>
+                    <v-card v-for="(i, index) in answers" :key="index">
+                        <v-layout>
+                            <v-text-field
+                                    :label="'Вариант ответа ' + (index + 1)"
+                                    prepend-icon="title"
+                                    v-model="i.value"
+                                    class="pa-3 pt-4"
+                            ></v-text-field>
+                            <v-btn class="pa-0 ma-3" @click="answers.insert(index + 1, {value: ''},)">
+                                +
+                            </v-btn>
+                        </v-layout>
+                    </v-card>
                 </v-layout>
             </v-card>
         </v-dialog>
@@ -89,7 +93,7 @@
                     dark
             >
                 <v-card-text>
-                    Загружаем новость
+                    Загружаем опрос
                     <v-progress-linear
                             indeterminate
                             color="white"
@@ -102,93 +106,47 @@
 </template>
 
 <script>
-    import {VueEditor} from 'vue2-editor'
     import axios from 'axios';
     import {LocationPicker} from 'vue2-location-picker'
 
+    Array.prototype.insert = function (index, item) {
+        this.splice(index, 0, item);
+    };
+
     export default {
         components: {
-            VueEditor,
             LocationPicker,
         },
-        name: "CreateNewsDialog",
+        name: "CreateSurveyDialog",
         data() {
             return {
                 dialog: false,
                 sending: false,
-                content: '<h1>Здесь текст</h1>',
+                description: null,
                 title: null,
                 date: null,
                 datePicker: false,
+                answers: [{value: "Первый вариант ответа"},
+                    {value: "Второй вариант ответа"},
+                    {value: "Третий вариант ответа"}],
                 location: {lat: 59.568456, lng: 30.124473},
-                imagePicker: false,
-                imageName: '',
-                imageUrl: '',
-                imageFile: ''
             }
         },
         methods: {
-            pickFile() {
-                this.$refs.image.click()
-            },
-            onFilePicked(e) {
-                const files = e.target.files
-                if (files[0] !== undefined) {
-                    this.imageName = files[0].name
-                    if (this.imageName.lastIndexOf('.') <= 0) {
-                        return
-                    }
-                    const fr = new FileReader()
-                    fr.readAsDataURL(files[0])
-                    fr.addEventListener('load', () => {
-                        this.imageUrl = fr.result
-                        this.imageFile = files[0] // this is an image file that can be sent to server...
-                    })
-                } else {
-                    this.imageName = ''
-                    this.imageFile = ''
-                    this.imageUrl = ''
-                }
-                console.log('imageName: ' + this.imageName);
-                console.log('imageUrl: ' + this.imageUrl);
-                console.log('imageFile: ' + this.imageFile);
-            },
             async send() {
                 this.sending = true;
-                console.log('imageName: ' + this.imageName);
-                console.log('imageUrl: ' + this.imageUrl);
-                console.log('imageFile: ' + this.imageFile.name);
 
-                const formData = new FormData();
-                formData.append('file', this.imageFile, this.imageFile.name);
-
-                // let context = this;
-                let imageUrl = (await axios.post("http://138.68.108.198:8081/file/upload",
-                    formData, {
-                        headers: {
-                            'content-type': 'multipart/form-data',
-                            'Access-Control-Allow-Origin': '*',
-                        }
-                    })).data.link;
-
-                console.log("image url", imageUrl);
                 let context = this;
-                let resp = await axios.post(
-                    "http://138.68.108.198:8081/news/create", {
+                await axios.post(
+                    "http://138.68.108.198:8081/survey/create", {
                         html: context.content,
                         title: context.title,
                         date: new Date(Date.parse(this.date)).toISOString(),
-                        imageUrl: imageUrl,
-                    },
-                    {
-                        'Access-Control-Allow-Origin': '*',
+                        answers: context.answers.map((i) => i.value)
                     }
                 );
 
-                console.log("add new resp: ", resp);
-
                 this.sending = false;
-
                 this.dialog = false;
             }
         },

@@ -9,14 +9,21 @@
   },
   "dependencies": {
     "core-js": "^2.6.5",
+    "cors": "^2.8.5",
     "tiptap-extensions": "^1.20.1",
     "vue": "^2.6.10",
+    "vue-image-upload-resize": "^2.0.4",
+    "vue-moment": "^4.0.0",
+    "vue-poll": "^0.1.8",
     "vue-router": "^3.0.3",
     "vue2-editor": "^2.6.6",
+    "vue2-google-maps": "^0.10.6",
+    "vue2-location-picker": "^1.2.0",
     "vuetify": "^1.5.5",
     "vuex": "^3.0.1"
   },
   "devDependencies": {
+    "@fortawesome/fontawesome-free": "^5.8.2",
     "@vue/cli-plugin-babel": "^3.7.0",
     "@vue/cli-plugin-eslint": "^3.7.0",
     "@vue/cli-service": "^3.7.0",

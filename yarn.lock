@@ -667,6 +667,11 @@
     lodash "^4.17.11"
     to-fast-properties "^2.0.0"
 
+"@fortawesome/fontawesome-free@^5.8.2":
+  version "5.8.2"
+  resolved "https://registry.yarnpkg.com/@fortawesome/fontawesome-free/-/fontawesome-free-5.8.2.tgz#fae4112c4fb47086f6ae167e32524b280000abd5"
+  integrity sha512-E4fDUF4fbu9AxKpaQQqCN3XBnNzb/5e0Gvd9OaQsYkK574LVI57v/EqqPfIm/mC7jYbxaPNrhvT5AF+Yzwyizg==
+
 "@intervolga/optimize-cssnano-plugin@^1.0.5":
   version "1.0.6"
   resolved "https://registry.yarnpkg.com/@intervolga/optimize-cssnano-plugin/-/optimize-cssnano-plugin-1.0.6.tgz#be7c7846128b88f6a9b1d1261a0ad06eb5c0fdf8"
@@ -1485,6 +1490,13 @@ babel-plugin-module-resolver@3.2.0:
     reselect "^3.0.1"
     resolve "^1.4.0"
 
+babel-runtime@^5.8.0:
+  version "5.8.38"
+  resolved "https://registry.yarnpkg.com/babel-runtime/-/babel-runtime-5.8.38.tgz#1c0b02eb63312f5f087ff20450827b425c9d4c19"
+  integrity sha1-HAsC62MxL18If/IEUIJ7QlydTBk=
+  dependencies:
+    core-js "^1.0.0"
+
 balanced-match@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/balanced-match/-/balanced-match-1.0.0.tgz#89b4d199ab2bee49de164ea02b89ce462d71b767"
@@ -1549,6 +1561,11 @@ bluebird@^3.1.1, bluebird@^3.5.1, bluebird@^3.5.3:
   version "3.5.5"
   resolved "https://registry.yarnpkg.com/bluebird/-/bluebird-3.5.5.tgz#a8d0afd73251effbbd5fe384a77d73003c17a71f"
   integrity sha512-5am6HnnfN+urzt4yfg7IgTbotDjIT/u8AJpEt0sIU9FtXfVeezXAPKswrG+xKUCOYAINpSdgZVDU6QFh+cuH3w==
+
+blueimp-canvas-to-blob@^3.14.0:
+  version "3.14.0"
+  resolved "https://registry.yarnpkg.com/blueimp-canvas-to-blob/-/blueimp-canvas-to-blob-3.14.0.tgz#ea075ffbfb1436607b0c75e951fb1ceb3ca0288e"
+  integrity sha512-i6I2CiX1VR8YwUNYBo+dM8tg89ns4TTHxSpWjaDeHKcYS3yFalpLCwDaY21/EsJMufLy2tnG4j0JN5L8OVNkKQ==
 
 bn.js@^4.0.0, bn.js@^4.1.0, bn.js@^4.1.1, bn.js@^4.4.0:
   version "4.11.8"
@@ -2259,6 +2276,11 @@ copy-webpack-plugin@^4.6.0:
     p-limit "^1.0.0"
     serialize-javascript "^1.4.0"
 
+core-js@^1.0.0:
+  version "1.2.7"
+  resolved "https://registry.yarnpkg.com/core-js/-/core-js-1.2.7.tgz#652294c14651db28fa93bd2d5ff2983a4f08c636"
+  integrity sha1-ZSKUwUZR2yj6k70tX/KYOk8IxjY=
+
 core-js@^2.6.5:
   version "2.6.8"
   resolved "https://registry.yarnpkg.com/core-js/-/core-js-2.6.8.tgz#dc3a1e633a04267944e0cb850d3880f340248139"
@@ -2268,6 +2290,14 @@ core-util-is@1.0.2, core-util-is@~1.0.0:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/core-util-is/-/core-util-is-1.0.2.tgz#b5fd54220aa2bc5ab57aab7140c940754503c1a7"
   integrity sha1-tf1UIgqivFq1eqtxQMlAdUUDwac=
+
+cors@^2.8.5:
+  version "2.8.5"
+  resolved "https://registry.yarnpkg.com/cors/-/cors-2.8.5.tgz#eac11da51592dd86b9f06f6e7ac293b3df875d29"
+  integrity sha512-KIHbLJqu73RGr/hnbrO9uBeixNGuvSQjul/jdFvS/KFSIH1hWVd1ng7zOHx+YrEfInLG7q4n6GHQ9cDtxv/P6g==
+  dependencies:
+    object-assign "^4"
+    vary "^1"
 
 cosmiconfig@^4.0.0:
   version "4.0.0"
@@ -3240,6 +3270,11 @@ execa@^1.0.0:
     p-finally "^1.0.0"
     signal-exit "^3.0.0"
     strip-eof "^1.0.0"
+
+exif-js@^2.3.0:
+  version "2.3.0"
+  resolved "https://registry.yarnpkg.com/exif-js/-/exif-js-2.3.0.tgz#9d10819bf571f873813e7640241255ab9ce1a814"
+  integrity sha1-nRCBm/Vx+HOBPnZAJBJVq5zhqBQ=
 
 expand-brackets@^2.1.4:
   version "2.1.4"
@@ -4951,6 +4986,11 @@ map-visit@^1.0.0:
   dependencies:
     object-visit "^1.0.0"
 
+marker-clusterer-plus@^2.1.4:
+  version "2.1.4"
+  resolved "https://registry.yarnpkg.com/marker-clusterer-plus/-/marker-clusterer-plus-2.1.4.tgz#f8eff74d599dab3b7d0e3fed5264ea0e704f5d67"
+  integrity sha1-+O/3TVmdqzt9Dj/tUmTqDnBPXWc=
+
 md5.js@^1.3.4:
   version "1.3.5"
   resolved "https://registry.yarnpkg.com/md5.js/-/md5.js-1.3.5.tgz#b5d07b8e3216e3e27cd728d72f70d1e6a342005f"
@@ -5174,6 +5214,11 @@ mkdirp@0.5.1, mkdirp@0.5.x, mkdirp@^0.5.0, mkdirp@^0.5.1, mkdirp@~0.5.0, mkdirp@
   integrity sha1-MAV0OOrGz3+MR2fzhkjWaX11yQM=
   dependencies:
     minimist "0.0.8"
+
+moment@^2.11.1:
+  version "2.24.0"
+  resolved "https://registry.yarnpkg.com/moment/-/moment-2.24.0.tgz#0d055d53f5052aa653c9f6eb68bb5d12bf5c2b5b"
+  integrity sha512-bV7f+6l2QigeBBZSM/6yTNq4P2fNpSWj/0e7jQcy87A8e7o2nAfP/34/2ky5Vw4B9S446EtIhodAzkFCcR4dQg==
 
 move-concurrently@^1.0.1:
   version "1.0.1"
@@ -5454,7 +5499,7 @@ oauth-sign@~0.9.0:
   resolved "https://registry.yarnpkg.com/oauth-sign/-/oauth-sign-0.9.0.tgz#47a7b016baa68b5fa0ecf3dee08a85c679ac6455"
   integrity sha512-fexhUFFPTGV8ybAtSIGbV6gOkSv8UtRbDBnAyLQw4QPKkgNlsH2ByPGtMUqdWkos6YCRmAqViwgZrJc/mRDzZQ==
 
-object-assign@^4.0.1, object-assign@^4.1.0, object-assign@^4.1.1:
+object-assign@^4, object-assign@^4.0.1, object-assign@^4.1.0, object-assign@^4.1.1:
   version "4.1.1"
   resolved "https://registry.yarnpkg.com/object-assign/-/object-assign-4.1.1.tgz#2109adc7965887cfc05cbbd442cac8bfbb360863"
   integrity sha1-IQmtx5ZYh8/AXLvUQsrIv7s2CGM=
@@ -8108,7 +8153,7 @@ validate-npm-package-license@^3.0.1:
     spdx-correct "^3.0.0"
     spdx-expression-parse "^3.0.0"
 
-vary@~1.1.2:
+vary@^1, vary@~1.1.2:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/vary/-/vary-1.1.2.tgz#2299f02c6ded30d4a5961b0b9f74524a18f634fc"
   integrity sha1-IpnwLG3tMNSllhsLn3RSShj2NPw=
@@ -8173,6 +8218,15 @@ vue-hot-reload-api@^2.3.0:
   resolved "https://registry.yarnpkg.com/vue-hot-reload-api/-/vue-hot-reload-api-2.3.3.tgz#2756f46cb3258054c5f4723de8ae7e87302a1ccf"
   integrity sha512-KmvZVtmM26BQOMK1rwUZsrqxEGeKiYSZGA7SNWE6uExx8UX/cj9hq2MRV/wWC3Cq6AoeDGk57rL9YMFRel/q+g==
 
+vue-image-upload-resize@^2.0.4:
+  version "2.0.4"
+  resolved "https://registry.yarnpkg.com/vue-image-upload-resize/-/vue-image-upload-resize-2.0.4.tgz#4f26d8faebac105c9bb69b43dba3e37a3589351b"
+  integrity sha512-9pPJw5RhBjWVq4mYj4MgZVnZg5x5kJeMwwW8QcezjGqFb9jV86Pd8AOU32wp4bhADyUOJEfYNicKuDcEFNiGxQ==
+  dependencies:
+    blueimp-canvas-to-blob "^3.14.0"
+    exif-js "^2.3.0"
+    vue "^2.5.17"
+
 vue-loader@^15.7.0:
   version "15.7.0"
   resolved "https://registry.yarnpkg.com/vue-loader/-/vue-loader-15.7.0.tgz#27275aa5a3ef4958c5379c006dd1436ad04b25b3"
@@ -8183,6 +8237,18 @@ vue-loader@^15.7.0:
     loader-utils "^1.1.0"
     vue-hot-reload-api "^2.3.0"
     vue-style-loader "^4.1.0"
+
+vue-moment@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/vue-moment/-/vue-moment-4.0.0.tgz#20809d1e7d7fca63d556fb8d008b95993d32f5ea"
+  integrity sha512-lNkEPuA3i3A4q4TDSwOXoRF4Y2vHHdaTOSvpPyGgxoFQP8n4sUh6jU5aJj3FIMlXo5UaHLPIz5hvvpvYx9Wj0w==
+  dependencies:
+    moment "^2.11.1"
+
+vue-poll@^0.1.8:
+  version "0.1.8"
+  resolved "https://registry.yarnpkg.com/vue-poll/-/vue-poll-0.1.8.tgz#1ad914ea0791ce94e97c99b8196fe1c4e3bc1c43"
+  integrity sha512-iT/ng+fZeZThwxOfRnMXqYgQDvoYQqF5W2/gUrfsKN8/gfVcxzBm6UGU6IhF+hOh/HNWyaQHkZDD6lLDoIMNKw==
 
 vue-router@^3.0.3:
   version "3.0.6"
@@ -8218,7 +8284,20 @@ vue2-editor@^2.6.6:
     lodash.merge "^4.6.0"
     quill "^1.3.6"
 
-vue@^2.6.10:
+vue2-google-maps@^0.10.6:
+  version "0.10.6"
+  resolved "https://registry.yarnpkg.com/vue2-google-maps/-/vue2-google-maps-0.10.6.tgz#c9488cc2cfa9dd8d211d2a738b785061107715bc"
+  integrity sha512-4EbUlPAKb/UL3AFykH8EfL9BNqvS0QmsEwUo/IUaOvOC4UXFdKtbHWC3TkHUIL8kvlgHVagW6aEvTQ8aGcPJrg==
+  dependencies:
+    babel-runtime "^5.8.0"
+    marker-clusterer-plus "^2.1.4"
+
+vue2-location-picker@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/vue2-location-picker/-/vue2-location-picker-1.2.0.tgz#ce38affdefd1d7011713f7d792c803dedddae4cb"
+  integrity sha512-NMnr4CqOFpk4U5XJHXbplE9Ex3Ifhm2uhhaYifv3W27YkHCSrXZu3zDn6SkAW7eejZ9+wJYV6AxvJX6qI1HDXQ==
+
+vue@^2.5.17, vue@^2.6.10:
   version "2.6.10"
   resolved "https://registry.yarnpkg.com/vue/-/vue-2.6.10.tgz#a72b1a42a4d82a721ea438d1b6bf55e66195c637"
   integrity sha512-ImThpeNU9HbdZL3utgMCq0oiMzAkt1mcgy3/E6zWC/G6AaQoeuFdsl9nDhTDU3X1R6FK7nsIUuRACVcjI+A2GQ==

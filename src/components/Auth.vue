@@ -14,12 +14,15 @@
 </template>
 
 <script>
+    import Router from 'vue-router'
+
     export default {
         name: "Auth",
         methods: {
             login: function () {
                 localStorage.setItem('auth', "ok");
                 this.$store.commit('SET_AUTH', "ok");
+                Router.push('news');
             },
         },
     }

@@ -1,19 +1,26 @@
 <template>
-    <v-card>
+    <v-card class="mb-4">
         <v-img
                 height="200px"
-                :src="imageUrl"
+                :src="imageUrl != null ? imageUrl : ''"
         >
             <v-container fill-height fluid>
                 <v-layout fill-height>
-                    <v-flex xs12 align-end flexbox style="background: #ffffff55">
+                    <v-flex class="text-xs-left" flexbox style="background: #ffffff55">
+                        <a :href="url">Источник</a>
+                    </v-flex>
+                    <v-flex align-center flexbox style="background: #ffffff55">
                         <span class="headline">{{ title }}</span>
+                    </v-flex>
+                    <v-flex class="text-xs-right" flexbox style="background: #ffffff55">
+                        <span>{{ date | moment("DD-MM-YYYY, h:mm") }}</span>
                     </v-flex>
                 </v-layout>
             </v-container>
         </v-img>
         <v-card-title v-html="html">
         </v-card-title>
+
         <!--<v-card-actions>-->
             <!--<v-btn flat color="orange">Share</v-btn>-->
             <!--<v-btn flat color="orange">Explore</v-btn>-->
@@ -23,7 +30,7 @@
 
 <script>
     export default {
-        props: ['title', 'html', 'imageUrl'],
+        props: ['title', 'html', 'imageUrl', 'url', 'date'],
     }
 </script>
 

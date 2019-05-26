@@ -1,13 +1,11 @@
 <template>
     <div>
         <CreateNewsDialog></CreateNewsDialog>
-        <v-progress-circular indeterminate v-if="news == null">
+        <v-progress-circular indeterminate v-if="news == null" class="ma-auto" style="position: relative">
         </v-progress-circular>
-        <div v-else>
-            <v-list class="text-xs-center">
-                <NewsItem v-for="(newItem, index) in news" v-bind="newItem" :key="index"></NewsItem>
-            </v-list>
-        </div>
+        <v-list class="text-xs-center" v-else>
+            <NewsItem v-for="(newItem, index) in news" v-bind="newItem" :key="index"></NewsItem>
+        </v-list>
     </div>
 </template>
 

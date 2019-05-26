@@ -23,7 +23,8 @@
                 {title: 'Новости', icon: 'list', path: '/news'},
                 {title: 'Пользователи', icon: 'people', path: '/users'},
                 {title: 'Инициативы', icon: 'message', path: '/initiatives'},
-                {title: 'Обратная связь', icon: 'question_answer', path: '/about'}
+                {title: 'Обратная связь', icon: 'question_answer', path: '/about'},
+                {title: 'Руки помощи', icon: 'fas fa-hands-helping', path: '/hands'}
             ],
         })
     }

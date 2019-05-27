@@ -13,20 +13,28 @@
             <v-flex xs12></v-flex>
 
             <v-flex>
-                <a href="http://138.68.108.198:8000/template.pdf"><v-icon class="ma-3" @click="window.open('http://138.68.108.198:8000/template.pdf', '_blank')" large>fas fa-file-pdf</v-icon></a>
+                <a><v-icon class="ma-3" @click="openPdf" large>fas fa-file-pdf</v-icon></a>
             </v-flex>
         </v-card-actions>
     </v-card>
 </template>
 
 <script>
+    import axios from 'axios';
+
     export default {
         name: "RequestItem",
-        props: ['date', 'likeUserIds', 'dislikeUserIds', 'description'],
+        props: ['id', 'date', 'likeUserIds', 'dislikeUserIds', 'description'],
         mounted() {
             console.log("desc: ", this.description);
         },
         methods: {
+            async openPdf() {
+                this.$parent.pdfDialog = true;
+                let resp = await axios.get('http://138.68.108.198:8081/pdf/generate');
+                this.$parent.pdfDialog = false;
+                window.open(resp.data.link, '_blank');
+            }
         }
     }
 </script>

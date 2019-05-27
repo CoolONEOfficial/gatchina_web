@@ -136,13 +136,20 @@
             async send() {
                 this.sending = true;
 
+                let o = {};
+                this.answers.forEach(
+                    val => {
+                        o[val.value] = 0;
+                    }
+                );
+
                 let context = this;
                 await axios.post(
                     "http://138.68.108.198:8081/survey/create", {
                         html: context.content,
                         title: context.title,
                         date: new Date(Date.parse(this.date)).toISOString(),
-                        answers: context.answers.map((i) => i.value)
+                        answers: o
                     }
                 );
 

@@ -1,7 +1,7 @@
 <template>
     <v-card class="pa-3 mb-3">
-        <VuePoll showResults :question="title" :answers="answers.map((f, index) => {
-            return {value: index + 1, text: f, votes: Math.floor(Math.random() * (80 - 20 + 1)) + 20};
+        <VuePoll showResults :question="title" :answers="Object.entries(answers).map((f, index) => {
+            return {value: index + 1, text: f[0].toString(), votes:f[1] };
         })"></VuePoll>
     </v-card>
 </template>
@@ -14,7 +14,7 @@
             VuePoll
         },
         name: "SurveyItem",
-        props: ['title', 'answers', 'voicedUserIds', 'date', 'geo'],
+        props: ['title', 'answers', 'voicedUserIds', 'date', 'geo', 'votes'],
     }
 </script>
 

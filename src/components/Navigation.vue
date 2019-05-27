@@ -23,6 +23,7 @@
                 {title: 'Новости', icon: 'list', path: '/news'},
                 {title: 'Пользователи', icon: 'people', path: '/users'},
                 {title: 'Инициативы', icon: 'message', path: '/initiatives'},
+                {title: 'Обращения', icon: 'fas fa-envelope-open-text', path: '/requests'},
                 {title: 'Руки помощи', icon: 'fas fa-hands-helping', path: '/helpme'},
                 {title: 'Места', icon: 'fas fa-map-marker-alt', path: '/places'},
                 {title: 'Опросы', icon: 'fas fa-poll', path: '/survey'},

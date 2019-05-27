@@ -1,7 +1,7 @@
 <template>
     <div>
         <CreateNewsDialog></CreateNewsDialog>
-        <v-progress-circular indeterminate v-if="news == null" class="ma-auto" style="position: relative">
+        <v-progress-circular indeterminate v-if="news == null" class="ma-auto loadprogress" style="position: relative">
         </v-progress-circular>
         <v-list class="text-xs-center" v-else>
             <NewsItem v-for="(newItem, index) in news" v-bind="newItem" :key="index"></NewsItem>

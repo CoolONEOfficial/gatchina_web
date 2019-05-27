@@ -1,6 +1,6 @@
 <template>
     <div>
-        <v-progress-circular indeterminate v-if="users == null" class="ma-auto" style="position: relative">
+        <v-progress-circular indeterminate v-if="users == null" class="ma-auto loadprogress" style="position: relative">
         </v-progress-circular>
         <v-list two-line>
             <UserItem v-for="(item, index) in users"

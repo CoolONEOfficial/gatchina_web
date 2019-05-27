@@ -1,6 +1,6 @@
 <template>
     <div>
-        <v-progress-circular indeterminate v-if="helpMes == null" class="ma-auto" style="position: relative">
+        <v-progress-circular indeterminate v-if="helpMes == null" class="ma-auto loadprogress" style="position: relative">
         </v-progress-circular>
         <v-list class="text-xs-center" v-else>
             <HelpMeItem v-for="(newItem, index) in helpMes" v-bind="newItem" :key="index"></HelpMeItem>

@@ -1,5 +1,6 @@
 <template>
     <div>
+        <v-progress-circular indeterminate v-if="markers.length === 0" class="ma-auto loadprogress loadprogress" style="position: absolute; z-index: 99"> </v-progress-circular>
         <GmapMap
                 :center="center != null ? center.position : {lat: 59.568456, lng: 30.124473}"
                 :zoom="13"
@@ -7,8 +8,8 @@
         >
             <google-marker v-for="(m, index) in markers"
                            :position="{
-                               lat: m.geo.latitude,
-                               lng: m.geo.longitude,
+                               lat: m.geo.latitude + Math.random() / 200 - 0.5 / 200,
+                               lng: m.geo.longitude + Math.random() / 200 - 0.5 / 200,
                            }"
                            :clickable="true"
                            :key="index"
@@ -16,18 +17,18 @@
             </google-marker>
         </GmapMap>
         <v-dialog v-model="dialog" width="500">
-            <InitiativeItem v-bind="selected"></InitiativeItem>
+            <RequestItem v-bind="selected"></RequestItem>
         </v-dialog>
     </div>
 </template>
 
 <script>
     import axios from "axios";
-    import InitiativeItem from "../components/InitiativeItem";
+    import RequestItem from "../components/RequestItem";
 
     export default {
-        name: "Initiatives",
-        components: {InitiativeItem},
+        name: "Requests",
+        components: {RequestItem},
         watch: {
             center: function (val) {
                 console.log('val: ', val);
@@ -35,7 +36,7 @@
         },
         data() {
             return {
-                initiatives: [],
+                Requests: [],
                 center: null,
                 markers: [],
                 dialog: false,
@@ -59,11 +60,11 @@
                     '&size=20')
                 .then(function (response) {
                     console.log(response);
-                    context.initiatives = response.data.content;
-                    for (let d of context.initiatives) {
+                    context.Requests = response.data.content;
+                    for (let d of context.Requests) {
                         context.markers.push(d);
                     }
-                    console.log(context.initiatives);
+                    console.log(context.Requests);
                 });
         }
     }

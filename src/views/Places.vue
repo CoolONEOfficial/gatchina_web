@@ -1,7 +1,7 @@
 <template>
     <div>
         <CreatePlaceDialog></CreatePlaceDialog>
-        <v-progress-circular indeterminate v-if="places == null" class="ma-auto" style="position: relative">
+        <v-progress-circular indeterminate v-if="places == null" class="ma-auto loadprogress" style="position: relative">
         </v-progress-circular>
         <GmapMap
                 :center="{lat: 59.568456, lng: 30.124473}"

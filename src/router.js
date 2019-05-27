@@ -26,6 +26,11 @@ export default new Router({
       component: () => import(/* webpackChunkName: "initiatives" */ './views/Initiatives.vue')
     },
     {
+      path: '/requests',
+      name: 'requests',
+      component: () => import(/* webpackChunkName: "requests" */ './views/Requests.vue')
+    },
+    {
       path: '/users',
       name: 'users',
       component: () => import(/* webpackChunkName: "users" */ './views/Users.vue')

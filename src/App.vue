@@ -36,3 +36,13 @@
         }
     }
 </script>
+
+<style lang="scss">
+    .loader {
+        z-index: 99;
+        position: absolute !important;
+        top: 50vh;
+        left: 50vw;
+        transform: translateX(-50%) translateY(-50%);
+    }
+</style>

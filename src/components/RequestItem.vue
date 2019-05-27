@@ -13,18 +13,7 @@
             <v-flex xs12></v-flex>
 
             <v-flex>
-                <v-layout column>
-                    <v-icon class="text-xs-center pa-3">fas fa-thumbs-up</v-icon>
-
-                    <span class="text-xs-center pt-0 pb-3">{{ likeUserIds != null ? likeUserIds.length : 0 }}</span>
-                </v-layout>
-            </v-flex>
-
-            <v-flex>
-                <v-layout column>
-                    <v-icon class="text-xs-center pa-3">fas fa-thumbs-down</v-icon>
-                    <span class="text-xs-center pt-0 pb-3">{{ dislikeUserIds != null ? dislikeUserIds.length : 0 }}</span>
-                </v-layout>
+                <a href="http://138.68.108.198:8000/template.pdf"><v-icon class="ma-3" @click="window.open('http://138.68.108.198:8000/template.pdf', '_blank')" large>fas fa-file-pdf</v-icon></a>
             </v-flex>
         </v-card-actions>
     </v-card>
@@ -32,15 +21,12 @@
 
 <script>
     export default {
-        name: "InitiativeItem",
+        name: "RequestItem",
         props: ['date', 'likeUserIds', 'dislikeUserIds', 'description'],
         mounted() {
             console.log("desc: ", this.description);
         },
         methods: {
-            openPdf() {
-
-            }
         }
     }
 </script>

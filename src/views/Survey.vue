@@ -1,7 +1,7 @@
 <template>
     <div>
         <CreateSurveyDialog></CreateSurveyDialog>
-        <v-progress-circular indeterminate v-if="survey == null" class="ma-auto" style="position: relative">
+        <v-progress-circular indeterminate v-if="survey == null" class="ma-auto loadprogress" style="position: relative">
         </v-progress-circular>
         <v-list class="text-xs-center" v-else>
             <SurveyItem v-for="(newItem, index) in survey" v-bind="newItem" :key="index"></SurveyItem>

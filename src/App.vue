@@ -9,7 +9,7 @@
         </v-toolbar>
         <v-layout row>
             <Navigation v-show="this.$store.getters.AUTH != null"
-                        style="padding-top: 64px; position: fixed;"></Navigation>
+                        style="padding-top: 64px; position: fixed; bottom: 0; top: 0;"></Navigation>
             <v-content style="padding-left: 300px;">
                 <v-container align-center justify-center fluid style="height: 100%">
                     <v-fade-transition mode="out-in">

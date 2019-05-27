@@ -18,17 +18,22 @@
         name: "Survey",
         components: {CreateSurveyDialog, SurveyItem},
         mounted() {
-            let context = this;
-            axios
-                .get('http://138.68.108.198:8081/survey/all' +
-                    '?direction=ASC' +
-                    '&orderBy=date' +
-                    '&page=0' +
-                    '&size=20')
-                .then(function (response) {
-                    console.log(response);
-                    context.survey = response.data.content;
-                });
+            this.reload();
+        },
+        methods: {
+            reload() {
+                let context = this;
+                axios
+                    .get('http://138.68.108.198:8081/survey/all' +
+                        '?direction=ASC' +
+                        '&orderBy=date' +
+                        '&page=0' +
+                        '&size=20')
+                    .then(function (response) {
+                        console.log(response);
+                        context.survey = response.data.content;
+                    });
+            }
         },
         data: function () {
             return {

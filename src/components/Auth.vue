@@ -14,7 +14,7 @@
 </template>
 
 <script>
-    import Router from 'vue-router'
+    import router from 'vue-router'
 
     export default {
         name: "Auth",
@@ -22,7 +22,7 @@
             login: function () {
                 localStorage.setItem('auth', "ok");
                 this.$store.commit('SET_AUTH', "ok");
-                Router.push('news');
+                router.push('/news');
             },
         },
     }

@@ -30,4 +30,6 @@ new Vue({
   router,
   store,
   render: h => h(App)
-}).$mount('#app')
+}).$mount('#app');
+if(this.$store.getters.AUTH != null)
+  router.push('/news');

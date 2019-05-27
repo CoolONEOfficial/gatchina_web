@@ -17,17 +17,22 @@
     export default {
         components: {CreateNewsDialog, NewsItem},
         mounted() {
-            let context = this;
-            axios
-                .get('https://cors.io/?http://138.68.108.198:8081/news/all' +
-                    '?direction=DESC' +
-                    '&orderBy=date' +
-                    '&page=0' +
-                    '&size=20')
-                .then(function (response) {
-                    console.log(response);
-                    context.news = response.data.content;
-                });
+            this.reload();
+        },
+        methods: {
+            reload() {
+                let context = this;
+                axios
+                    .get('https://cors.io/?http://138.68.108.198:8081/news/all' +
+                        '?direction=DESC' +
+                        '&orderBy=date' +
+                        '&page=0' +
+                        '&size=20')
+                    .then(function (response) {
+                        console.log(response);
+                        context.news = response.data.content;
+                    });
+            }
         },
         data: function () {
             return {

@@ -146,6 +146,7 @@
                     }
                 );
 
+                this.$parent.reload();
                 this.sending = false;
                 this.dialog = false;
             }

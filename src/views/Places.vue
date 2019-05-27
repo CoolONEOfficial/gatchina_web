@@ -31,25 +31,28 @@
 
     export default {
         components: {CreatePlaceDialog, PlaceItem},
+        mounted() {
+            this.reload();
+        },
         methods: {
+            reload() {
+                let context = this;
+                axios
+                    .get('https://cors.io/?http://138.68.108.198:8081/places/all' +
+                        '?direction=ASC' +
+                        '&orderBy=title' +
+                        '&page=0' +
+                        '&size=20')
+                    .then(function (response) {
+                        console.log(response);
+                        context.places = response.data.content;
+                    });
+            },
             onMarker(val) {
                 console.log('val: ', val);
                 this.selected = val;
                 this.placeDialog = true;
             }
-        },
-        mounted() {
-            let context = this;
-            axios
-                .get('https://cors.io/?http://138.68.108.198:8081/places/all' +
-                    '?direction=ASC' +
-                    '&orderBy=title' +
-                    '&page=0' +
-                    '&size=20')
-                .then(function (response) {
-                    console.log(response);
-                    context.places = response.data.content;
-                });
         },
         data: function () {
             return {
